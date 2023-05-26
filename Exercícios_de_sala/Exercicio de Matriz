@@ -1,0 +1,41 @@
+# Função para ler uma matriz 3x3 do teclado
+def ler_matriz():
+    matriz = []
+    for i in range(3):
+        linha = []
+        for j in range(3):
+            elemento = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
+            linha.append(elemento)
+        matriz.append(linha)
+    return matriz
+
+# Função para criar a matriz com os maiores valores
+def criar_matriz_maior(matriz1, matriz2):
+    matriz_maior = []
+    for i in range(3):
+        linha = []
+        for j in range(3):
+            elemento_maior = max(matriz1[i][j], matriz2[i][j])
+            linha.append(elemento_maior)
+        matriz_maior.append(linha)
+    return matriz_maior
+
+# Função para imprimir uma matriz
+def imprimir_matriz(matriz):
+    for linha in matriz:
+        for elemento in linha:
+            print(elemento, end=" ")
+        print()
+
+# Ler as duas matrizes
+print("Digite os elementos da primeira matriz:")
+matriz1 = ler_matriz()
+
+print("Digite os elementos da segunda matriz:")
+matriz2 = ler_matriz()
+
+# Criar e imprimir a matriz com os maiores valores
+matriz_maior = criar_matriz_maior(matriz1, matriz2)
+
+print("A matriz com os maiores valores é:")
+imprimir_matriz(matriz_maior)
